@@ -9,7 +9,7 @@ app = Flask(__name__)
 block_chain = BlockChain()
 
 @app.route('/register', methods=['POST'])
-def register():
+def register_book():
     values = request.get_json()
 
     required = ['sender', 'name', 'isbn', 'uuid']
@@ -25,7 +25,7 @@ def register():
     return jsonify(response), 200
 
 @app.route('/request', methods=['POST'])
-def request():
+def request_book():
     values = request.get_json()
 
     required = ['sender', 'isbn', 'from_date']
@@ -72,9 +72,9 @@ def review():
 
     return jsonify(response), 200
 
-def _get_transaction_by_request(request_json, kind):
+def _get_transaction_by_request(request_values, kind):
     transaction = {'kind': kind}
-    for k, v in request_json.items():
+    for k, v in request_values.items():
         transaction[k] = v
 
     return transaction
