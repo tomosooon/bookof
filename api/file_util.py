@@ -3,7 +3,7 @@
 import codecs
 import json
 
-def read_json_file(filepath):
+def read_file(filepath):
     """
     :param filepath: jsonファイルのパス
     :return json_dict: jsonを辞書に変換したオブジェクト, エラー
@@ -14,7 +14,7 @@ def read_json_file(filepath):
             json_dicts.append(json.loads(line.replace("\n", "")))
     return json_dicts
 
-def write_json_file(filepath, json_dict):
+def write_file(filepath, json_dict):
     """
     :param filepath: jsonファイルパス
     :param json_dict: jsonを辞書に変換したオブジェクト
