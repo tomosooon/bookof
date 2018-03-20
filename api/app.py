@@ -28,7 +28,7 @@ def register():
 def request():
     values = request.get_json()
 
-    required = ['isbn', 'from_date']
+    required = ['sender', 'isbn', 'from_date']
     if not all(k in values for k in required):
         return 'Missing values', 400
 
@@ -44,7 +44,7 @@ def request():
 def accept():
     values = request.get_json()
 
-    required = ['isbn', 'request_index', 'recipient']
+    required = ['sender', 'isbn', 'request_uuid', 'recipient']
     if not all(k in values for k in required):
         return 'Missing values', 400
 
@@ -60,7 +60,7 @@ def accept():
 def review():
     values = request.get_json()
 
-    required = ['isbn', 'message', 'star', 'sender']
+    required = ['sender', 'isbn', 'message', 'star']
     if not all(k in values for k in required):
         return 'Missing values', 400
 
