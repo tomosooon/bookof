@@ -12,6 +12,12 @@ class Test extends CI_Controller {
     {
         $data['title'] = 'test';
 
+        $book = new Book_model();
+        $book->init("isbnだよ！");
+
+        // $book->isbn = "isbnだよ！";
+        $data['book'] = $book;
+
         $this->load->view('header.html',$data);
         $this->load->view('test/index',$data);
     }

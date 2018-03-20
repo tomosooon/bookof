@@ -1,6 +1,6 @@
 <body>
 <div class="container">
-    <? var_dump($title) ?>
+    <?php var_dump($book) ?>
 </div>
 
 </body>
