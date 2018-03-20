@@ -8,6 +8,10 @@ app = Flask(__name__)
 
 block_chain = BlockChain()
 
+@app.route('/', methods=['GET'])
+def index():
+    return "Hello, World", 200
+
 @app.route('/register', methods=['POST'])
 def register_book():
     values = request.get_json()
