@@ -1,0 +1,11 @@
+sample_data.jsonがあるべきJSONの姿
+Serverとやりとりをするのがsample_data.chainの形でそのままやり取りをする
+
+data_formatterはjsonでいじったサンプルデータをchainの形に変えるもの
+sample_data.json ⇒ sample_data.chain
+に変える
+`php data_formatter.php`
+
+
+data_loader.php
+はchainからデータを読み取るためのやつ
