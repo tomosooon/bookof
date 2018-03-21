@@ -1,0 +1,32 @@
+@startuml
+
+actor userA
+actor userB
+
+client --> userA : show requests
+
+userA -> client : accept request(from userB)
+activate client
+
+client -> server : accept request
+activate server
+
+server -> server : create transaction
+server -> server : create block(& compute hash)
+
+server -> blockchain : add block
+activate blockchain
+
+client <-- server : accept request response(with transaction)
+deactivate server
+
+client -> blockchain : sync blockchain
+blockchain --> client : latest blockchain
+deactivate blockchain
+
+userA <-- client : show message(accepted!)
+deactivate client
+
+userA -> userB : hand over real book
+
+@enduml
