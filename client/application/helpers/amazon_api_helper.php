@@ -1,4 +1,8 @@
 <?php
+function urlencode_RFC3986($str) {
+    return str_replace('%7E', '~', rawurlencode($str));
+}
+
 function loadBookInformation($isbn) {
 
     define("ACCESS_KEY_ID"     , 'AKIAJ44T2YGZSGJ6APZQ');
@@ -27,13 +31,8 @@ function loadBookInformation($isbn) {
         $canonicalString .= '&'.urlencode_RFC3986($k).'='.urlencode_RFC3986($v);
     }
 
-    function urlencode_RFC3986($str) {
-        return str_replace('%7E', '~', rawurlencode($str));
-    }
-
     $parsedUrl = parse_url(ACCESS_URL);
     $stringToSign = "GET\n{$parsedUrl['host']}\n{$parsedUrl['path']}\n{$canonicalString}";
-
     $signature = base64_encode(
                         hash_hmac('sha256', $stringToSign, SECRET_ACCESS_KEY, true)
                     );
