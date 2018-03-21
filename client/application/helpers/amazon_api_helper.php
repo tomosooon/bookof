@@ -63,18 +63,9 @@ function loadBookInformation($isbm) {
 
         $book.init($isbn,$title);
 
-        $author         = $current->ItemAttributes->Author; // 著者
-        $authors = $author[0];
-        // 著者が複数いる場合
-        if (count($author) > 1) {
-            for ($i = 1; $i < count($author); $i++) {
-                $authors = $authors. ",". $author[$i];
-            }
-        }
-
-        $book->$author       = $authors
-        $book->$manufacturer = $current->ItemAttributes->Manufacturer; // 出版社
-        $book->$imgURL       = $current->MediumImage->URL; // 本の表紙の中サイズのURL(サイズは小中大から選べる)
+        $book->author       = $current->ItemAttributes->Author; // 著者
+        $book->manufacturer = $current->ItemAttributes->Manufacturer; // 出版社
+        $book->imgURL       = $current->MediumImage->URL; // 本の表紙の中サイズのURL(サイズは小中大から選べる)
 
         return $book;
     } else return null;
