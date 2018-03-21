@@ -8,12 +8,22 @@ class Accept extends CI_Controller {
         parent::__construct();
     }
 
-    public function accept()
+    public function index()
+    {
+        $data['title'] = 'Accept List';
+
+        $this->load->view('header.php', $data);
+        $this->load->view('accept/index', $data);
+    }
+
+    public function detail()
     {
         $data['title'] = 'Accept';
 
         $this->load->view('header.php', $data);
-        $this->load->view('accept/accept', $data);
+        $this->load->view('accept/index', $data);
+
     }
+
 
 }
