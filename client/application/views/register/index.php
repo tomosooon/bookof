@@ -30,6 +30,7 @@ $('#send').click(function () {
         url: 'http://localhost:5000/register',
         type: 'post',
         dataType: 'json',
+        contentType: 'application/json',
         data: {
             sender: $('#sender').val(),
             name: $('#name').val(),
@@ -39,6 +40,8 @@ $('#send').click(function () {
     })
     .done(function (response) {
         console.log("success!!");
+        alert("登録できたね超いいね！！！");
+        c
     })
     .fail(function () {
         console.log("failed!!");
