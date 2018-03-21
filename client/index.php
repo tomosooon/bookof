@@ -235,6 +235,14 @@ switch (ENVIRONMENT)
 	// Name of the "system" directory
 	define('SYSDIR', basename(BASEPATH));
 
+    # ローカル環境
+    define('APIPATH', "http://localhost:5000/");
+    define('CHAINPATH', BASEPATH."sample_data/sample_data.chain");
+
+    # 本番環境
+    // define('CHAINPATH', "/var2.data.chain");
+    // define('APIPATH', "http://35.229.217.28/");
+
 	// The path to the "application" directory
 	if (is_dir($application_folder))
 	{

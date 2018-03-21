@@ -26,8 +26,7 @@ $('#send').click(function () {
     console.log(guid());
     // Ajax通信を開始する
     $.ajax({
-        // url: 'http://35.229.217.28/register',
-        url: 'http://localhost:5000/register',
+        url: '<?php echo APIPATH;?>' + 'register',
         type: 'post',
         dataType: 'json',
         contentType: 'application/json',

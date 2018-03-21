@@ -2,7 +2,7 @@
 // .chain ⇒ 各モデルに変換
 
 # chainの読み込み処理
-$file = fopen("./sample_data.chain","r");
+$file = fopen(CHAINPATH,"r");
 $arr = [];
 if ($file) {
   while($line = fgets($file)) {
