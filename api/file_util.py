@@ -2,6 +2,7 @@
 
 import codecs
 import json
+import os
 
 def read_file(filepath):
     """
@@ -9,9 +10,10 @@ def read_file(filepath):
     :return json_dict: jsonを辞書に変換したオブジェクト, エラー
     """
     json_dicts = []
-    with open(filepath) as f:
-        for line in f:
-            json_dicts.append(json.loads(line.replace("\n", "")))
+    if os.path.exists(filepath):
+        with open(filepath) as f:
+            for line in f:
+                json_dicts.append(json.loads(line.replace("\n", "")))
     return json_dicts
 
 def write_file(filepath, json_dict):
