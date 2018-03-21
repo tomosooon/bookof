@@ -1,23 +1,13 @@
 <body>
 <div class="container">
-    <table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Book</th>
-            <th>user</th>
-            <th>uuid</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td scope="row"><a href = '/home/detail'>実践AWS Lambda　「サーバレス」を実現する新しいアプリケーションのプラットフォーム</a></td>
-          <td>yamashita@fringe81.com</td>
-          <td>xxxxxxxxxx</td>
-        </tr>
-
-    </table>
+  <h2>本の一覧</h2>
+  <?php for($i = 1; $i < count($books); $i+=2) { ?>
+    <div class = "row">
+      <div class="col-sm-6"><?php echo $books[$i-1]->isbn; ?></div>
+      <div class="col-sm-6"><?php echo $books[$i]->isbn; ?></div>
+    </div>
+  <?php } ?>
 </div>
-
 </body>
 </html>
 <?php
