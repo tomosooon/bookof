@@ -5,6 +5,7 @@ class Book_model extends CI_Model {
     public $isbn; #string
     public $reviews; # [Review]
     public $requests; # [Request]
+    public $bookMaterials; # [BookMaterial]
 
     public function __construct()
     {
