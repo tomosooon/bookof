@@ -6,20 +6,12 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        if (isset($_SESSION['email'])) {
-            $data['title'] = 'login';
-            $email = $this->input->post('email') != '' ? $this->input->post('email') : '';
-            $send = $this->input->post('send') != '' ? $this->input->post('send') : '';
-            if ($send != '') {
-                $_SESSION['email'] = $email;
-                $url = "http://".base_url()."home";
-                header("Location: {$url}");
-                exit();
-
-            }
-            $this->load->view('header.php',$data);
-            $this->load->view('login/index',$data);
-        }
+        $this->load->helper('url');
+//        if (!isset($_SESSION['email'])) {
+//            $url = "http://".base_url()."login";
+//            header("Location: {$url}");
+//            exit();
+//        }
 
     }
 
@@ -30,8 +22,10 @@ class Home extends CI_Controller {
 
       $data['books'] = $models['books'];
 
-	    $data['title'] = 'home';
-	    $this->load->view('header.php',$data);
-		  $this->load->view('home/index',$data);
-	  }
+
+
+      $data['title'] = 'home';
+      $this->load->view('header.php',$data);
+      $this->load->view('home/index',$data);
+    }
 }

@@ -19,9 +19,8 @@ class Login extends CI_Controller {
         $send = $this->input->post('send') != '' ? $this->input->post('send') : '';
         if ($send != '') {
             $_SESSION['email'] = $email;
-            $url = "http://".base_url()."home";
-            header("Location: {$url}");
-            exit();
+            echo $_SESSION['email'];
+
 
         }
 
