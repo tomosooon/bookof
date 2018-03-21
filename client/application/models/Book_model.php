@@ -4,7 +4,7 @@ class Book_model extends CI_Model {
 
     public $isbn; #string
     public $name; #string
-    public $authors; # [string]
+    public $author; # string
     public $manufacturer; #string
     public $imageURL; #string
     public $reviews; # [Review]
@@ -21,7 +21,7 @@ class Book_model extends CI_Model {
     {
         $this->isbn = $isbn;
         $this->name = $name;
-        $this->authors = array();
+        $this->author = '';
         $this->manufacturer = '';
         $this->imageURL = '';
         $this->reviews = array();
