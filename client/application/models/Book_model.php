@@ -21,9 +21,9 @@ class Book_model extends CI_Model {
     {
         $this->isbn = $isbn;
         $this->name = $name;
-        $this->$authors = array();
-        $this->$manufacturer = '';
-        $this->$imageURL = '';
+        $this->authors = array();
+        $this->manufacturer = '';
+        $this->imageURL = '';
         $this->reviews = array();
         $this->requests = array();
         $this->bookMaterials = array();
