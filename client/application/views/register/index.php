@@ -31,21 +31,20 @@ $('#send').click(function () {
         type: 'post',
         dataType: 'json',
         contentType: 'application/json',
-        data: {
+        data: JSON.stringify({
             sender: $('#sender').val(),
             name: $('#name').val(),
             isbn: $('#isbn').val(),
             book_material_id: guid(),
-        },
+        }),
     })
     .done(function (response) {
-        console.log("success!!");
         alert("登録できたね超いいね！！！");
-        c
+        window.location.href = '/home'; // 通常の遷移
     })
     .fail(function () {
-        console.log("failed!!");
-        alert("failed!!");
+        alert("失敗したよ！もっかい試してね！多分ジーノのせいだよ！");
+        window.location.href = '/register'; // 通常の遷移
     });
 });
 });
