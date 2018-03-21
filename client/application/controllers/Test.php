@@ -10,7 +10,7 @@ class Test extends CI_Controller {
 
     public function index()
     {
-        $this->load->helper('Chain_helper');
+        $this->load->helper('chain_helper');
         $data['title'] = 'test';
 
         $models = loadChainData();
