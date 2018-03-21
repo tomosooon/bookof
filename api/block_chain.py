@@ -7,12 +7,12 @@ from time import time
 import os
 
 # 環境変数にchain_fileがなければ、/var2/data.chainにする
-CHAIN_FILEPATH = os.getenv("CHAIN_FILE", "/tmp/data.chain")
+CHAIN_FILEPATH = os.getenv("CHAIN_FILE", "/var2/data.chain")
 
 
 class BlockChain:
     """
-    1トランザクションにつき、1ブロックを追加するので、current_transactionは持たないようにする
+    1トランザクションにつき、1ブロックを追加する
     """
     chain = []
 
@@ -22,7 +22,7 @@ class BlockChain:
 
     def _initialize_chain(self):
         self._set_genesis_block()
-        previous_chains = file_util.read_json_file(CHAIN_FILEPATH)
+        previous_chains = file_util.read_file(CHAIN_FILEPATH)
         self.chain.extend(previous_chains)
 
     def _set_genesis_block(self):
@@ -44,7 +44,8 @@ class BlockChain:
             'proof': proof,
             'previous_hash': previous_hash
         }
-        file_util.write_json_file(CHAIN_FILEPATH, block)
+        # blockを保存する
+        file_util.write_file(CHAIN_FILEPATH, block)
         self.chain.append(block)
         return block
 
