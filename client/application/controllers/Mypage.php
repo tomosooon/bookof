@@ -12,6 +12,7 @@ class Mypage extends CI_Controller {
   public function index()
   {
     date_default_timezone_set('Asia/Tokyo');
+    $email = $this->input->get_post('email');
     $data['title'] = 'home';
     $request = new RequestMock(NULL, NULL, date("Y/m/d"), date("Y/m/d"));
     $review = new ReviewMock(1, "めっちゃいいです", "1111-1111-1111", NULL, date("Y/m/d"));
