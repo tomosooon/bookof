@@ -12,7 +12,8 @@ class Accept extends CI_Controller {
     {
         $data['title'] = 'Accept';
 
-        $this->load->view('header.html',$data);
-        $this->load->view('home/index',$data);
+        $this->load->view('header.php', $data);
+        $this->load->view('accept/accept', $data);
     }
+
 }

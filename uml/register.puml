@@ -1,0 +1,29 @@
+@startuml
+
+actor user
+
+user -> client : register item
+
+activate client
+
+client -> server : register item request
+
+activate server
+
+server -> server : create transaction
+
+server -> server : create block(& compute hash)
+server -> blockchain : add block
+activate blockchain
+
+client <-- server : register item response(with transaction)
+deactivate server
+
+client -> blockchain : sync blockchain
+blockchain --> client : latest blockchain
+deactivate blockchain
+
+user <-- client : show registered item
+deactivate client
+
+@enduml

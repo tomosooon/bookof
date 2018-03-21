@@ -1,0 +1,31 @@
+@startuml
+
+actor user
+
+client --> user : show items
+
+user -> user : choose item
+
+user -> client : push request
+activate client
+
+client -> server : borrow item request
+activate server
+
+server -> server : create transaction
+server -> server : create block(& compute hash)
+
+server -> blockchain : add block
+activate blockchain
+
+client <-- server : borrow item response(with transaction)
+deactivate server
+
+client -> blockchain : sync blockchain
+blockchain --> client : latest blockchain
+deactivate blockchain
+
+user <-- client : show message(wait for accept)
+deactivate client
+
+@enduml
