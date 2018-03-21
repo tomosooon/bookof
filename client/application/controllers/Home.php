@@ -10,9 +10,14 @@ class Home extends CI_Controller {
     }
 
     public function index()
-	{
+    {
+      $this->load->helper('chain_helper');
+      $models = loadChainData();
+
+      $data['books'] = $models['books'];
+
 	    $data['title'] = 'home';
 	    $this->load->view('header.php',$data);
-		$this->load->view('home/index',$data);
-	}
+		  $this->load->view('home/index',$data);
+	  }
 }
