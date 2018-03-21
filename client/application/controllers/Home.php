@@ -15,12 +15,4 @@ class Home extends CI_Controller {
 	    $this->load->view('header.php',$data);
 		$this->load->view('home/index',$data);
 	}
-
-	public function detail()
-    {
-        $data['title'] = 'detail';
-        $uuid = $this->input->get_post('uuid');
-        $this->load->view('header.php',$data);
-        $this->load->view('home/detail',$data);
-    }
 }
