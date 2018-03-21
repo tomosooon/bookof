@@ -4,8 +4,7 @@ class Request_model extends CI_Model {
 
     public $book; # Book
     public $user; # User
-    public $fromWhen; # Date
-    public $createdAt; # DateTime
+    public $fromDate; # Date
 
     public function __construct()
     {
@@ -13,9 +12,11 @@ class Request_model extends CI_Model {
         parent::__construct();
     }
 
-    public function init($email)
+    public function init($book, $user, $fromDate)
     {
-        $this->email = $email;
+        $this->book = $book;
+        $this->user = $user;
+        $this->fromDate = $fromDate;
     }
 }
 

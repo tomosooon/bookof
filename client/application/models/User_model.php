@@ -5,8 +5,8 @@
 class User_model extends CI_Model {
 
     public $email; # string
-    public $reviews; # [Review]
     public $bookMaterials; # [BookMaterial]
+    public $requests; # [Request]
 
     public function __construct()
     {
@@ -17,6 +17,8 @@ class User_model extends CI_Model {
     public function init($email)
     {
         $this->email = $email;
+        $this->bookMaterials = array();
+        $this->requests = array();
     }
 }
 

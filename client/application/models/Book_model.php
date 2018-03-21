@@ -5,6 +5,7 @@ class Book_model extends CI_Model {
     public $isbn; #string
     public $reviews; # [Review]
     public $requests; # [Request]
+    public $bookMaterials; # [BookMaterial]
 
     public function __construct()
     {
@@ -15,6 +16,9 @@ class Book_model extends CI_Model {
     public function init($isbn)
     {
         $this->isbn = $isbn;
+        $this->reviews = array();
+        $this->requests = array();
+        $this->bookMaterials = array();
     }
 }
 
