@@ -2,10 +2,10 @@
 
 class Review_model extends CI_Model {
 
+    public $book; # Book
+    public $user; # User
     public $star; # int 1~5
     public $message; # string
-    public $isbn; # string
-    public $user; # User
 
     public function __construct()
     {
@@ -13,12 +13,12 @@ class Review_model extends CI_Model {
         parent::__construct();
     }
 
-    public function init($star, $message, $isbn, $user)
+    public function init($book, $user, $star, $message)
     {
+        $this->book = $book;
+        $this->user = $user;
         $this->star = $star;
         $this->message = $message;
-        $this->isbn = $isbn;
-        $this->user = $user;
     }
 }
 

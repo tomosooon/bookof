@@ -19,14 +19,14 @@
         "sender": "tomoaki@fringe81.com",
         "name": "本の名前",
         "isbn": "9784088700113",
-        "uuid": "本のuuid"
+        "book_material_id": "本のuuid"
       },
       {
         "kind": "request",
         "sender": "fujino@fringe81.com",
         "isbn": "9784088700113",
-        "fromDate": "2018-03-21",
-        "uuid": "requestのuuid"
+        "from_date": "2018-03-21",
+        "request_id": "requestのuuid"
       }
     ]
   },
@@ -40,7 +40,7 @@
         "kind": "accept",
         "sender": "tomoaki@fringe81.com",
         "isbn": "9784088700113",
-        "uuid": "requestのuuid",
+        "request_id": "requestのuuid",
         "recipient": "fujino@fringe81.com"
       },
       {
@@ -48,7 +48,7 @@
         "sender": "fujino@fringe81.com",
         "name": "ジーノ本",
         "isbn": "9784088700113",
-        "uuid": "jino"
+        "book_material_id": "jino"
       },
       {
         "kind": "review",

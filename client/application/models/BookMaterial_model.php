@@ -5,7 +5,7 @@
 class BookMaterial_model extends CI_Model {
 
     public $user; #User
-    public $uuid; #string
+    public $bookMaterialId; #string
     public $book; #Book
 
     public function __construct()
@@ -14,10 +14,10 @@ class BookMaterial_model extends CI_Model {
         parent::__construct();
     }
 
-    public function init($book, $uuid)
+    public function init($book, $bookMaterialId)
     {
         $this->book = $book;
-        $this->uuid = $uuid;
+        $this->bookMaterialId = $bookMaterialId;
     }
 }
 

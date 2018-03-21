@@ -16,7 +16,10 @@ class Test extends CI_Controller {
         $book = new Book_model();
         $book->init("isbnだよ！");
 
-        $data['book'] = loadChainData();;
+        $model = loadChainData();
+
+        // $data['book'] = $model['requests'];
+        $data['book'] = $model;
 
         // $book->isbn = "isbnだよ！";
         $this->load->view('header.php',$data);
