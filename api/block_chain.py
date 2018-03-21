@@ -27,10 +27,10 @@ class BlockChain:
 
     def _set_genesis_block(self):
         GENESIS_BLOCK = {"index": 0,
-           "time": time(),
+           "timestamp": time(),
            "transactions": [],
-           "previous_hash": 1,
-           "proof": 100
+           "proof": 100,
+           "previous_hash": 1
           }
         self.chain.append(GENESIS_BLOCK)
 
@@ -40,7 +40,7 @@ class BlockChain:
         block = {
             'index': len(self.chain),
             'timestamp': time(),
-            'transaction': transaction,
+            'transactions': [transaction],
             'proof': proof,
             'previous_hash': previous_hash
         }
