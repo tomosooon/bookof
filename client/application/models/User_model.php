@@ -16,6 +16,7 @@ class User_model extends CI_Model {
     public function init($email)
     {
         $this->email = $email;
+        $this->bookMaterials = array();
     }
 }
 
