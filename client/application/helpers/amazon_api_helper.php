@@ -4,7 +4,7 @@ function loadBookInformation($isbn) {
     define("ACCESS_KEY_ID"     , 'AKIAJ44T2YGZSGJ6APZQ');
     define("SECRET_ACCESS_KEY" , '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');
     define("ASSOCIATE_TAG"     , 'k315k1010-22');
-    define("ACCESS_URL"        , 'https://aws.amazonaws.jp/onca/xml');
+    define("ACCESS_URL"        , 'https://webservices.amazon.co.jp/onca/xml');
 
     $baseParam = 'AWSAccessKeyId='.ACCESS_KEY_ID;
 
@@ -31,30 +31,30 @@ function loadBookInformation($isbn) {
         return str_replace('%7E', '~', rawurlencode($str));
     }
 
-    $parsed_url = parse_url(ACCESS_URL);
-    $string_to_sign = "GET\n{$parsed_url['host']}\n{$parsed_url['path']}\n{$canonical_string}";
+    $parsedUrl = parse_url(ACCESS_URL);
+    $stringToSign = "GET\n{$parsedUrl['host']}\n{$parsedUrl['path']}\n{$canonicalString}";
 
     $signature = base64_encode(
-                        hash_hmac('sha256', $string_to_sign, SECRET_ACCESS_KEY, true)
+                        hash_hmac('sha256', $stringToSign, SECRET_ACCESS_KEY, true)
                     );
 
-    $url = ACCESS_URL.'?'.$canonical_string.'&Signature='.urlencode_RFC3986($signature);
+    $url = ACCESS_URL.'?'.$canonicalString.'&Signature='.urlencode_RFC3986($signature);
 
     $response = file_get_contents($url); //Amazonへレスポンス
 
     // レスポンスを配列で取得
-    $parsed_xml = null;
+    $parsedXml = null;
     if (isset($response)) {
-        $parsed_xml = simplexml_load_string($response);
+        $parsedXml = simplexml_load_string($response);
     }
 
     // Amazonへのレスポンスが正常に行われていたら Book_model のインスタンスを生成して返す
     if ($response &&
-        isset($parsed_xml) &&
-        !$parsed_xml->faultstring &&
-        !$parsed_xml->Items->Request->Errors) {
+        isset($parsedXml) &&
+        !$parsedXml->faultstring &&
+        !$parsedXml->Items->Request->Errors) {
 
-        $item = $parsed_xml->Items[0];
+        $item = $parsedXml->Items[0];
         $book = new Book_model;
 
         $title = $current->ItemAttributes->Title; // タイトル
