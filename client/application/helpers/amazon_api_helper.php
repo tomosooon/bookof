@@ -1,5 +1,5 @@
 <?php
-function loadBookInformation($isbm) {
+function loadBookInformation($isbn) {
 
     define("ACCESS_KEY_ID"     , 'AKIAJ44T2YGZSGJ6APZQ');
     define("SECRET_ACCESS_KEY" , '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');
