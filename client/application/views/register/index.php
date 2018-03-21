@@ -9,12 +9,12 @@ $this->load->helper('form');
         <input type="text" class="form-control" name="sender">
     </div>
     <div class="form-group has-warning">
-        <labe>isbn</labe>
-        <input type="text" class="form-control" name="isbn">
+        <labe>title</labe>
+        <input type="text" class="form-control" name="name">
     </div>
     <div class="form-group has-error">
-        <labe>from_date</labe>
-        <input type="text" class="form-control" name="from_date">
+        <labe>isbn</labe>
+        <input type="text" class="form-control" name="isbn">
     </div>
     <button type="submit" class="btn btn-primary" name="send" value="true">Send</button>
     </form>

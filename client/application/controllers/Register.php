@@ -17,11 +17,35 @@ class Register extends CI_Controller {
         $from_date = $this->input->post('from_date') != '' ? $this->input->post('from_date'):"";
         $send = $this->input->post('send') != '' ? $this->input->post('send'):"";
         if ($send != "") {
-//            echo "send true";
-              var_dump($send);
-              $url = "http://localhost:5000/";
 
-              var_dump($url);
+            $uuid = uniqid(rand());
+
+
+
+            $params = array(
+                "sender" => $sender,
+                "name" => $isbn,
+                "isbn" => $isbn,
+                "uuid" => $uuid
+
+            );
+            $params = json_encode($params);
+
+            $ops = array(
+                'http' => array(
+                    'method' => 'POST',
+                    'context' => '{"sender":"eee","name":"dsss","isbn":"dsss","uuid":"20606212135ab1ec9ce087b"}',
+                    'header' => "Content-Type: application/json"
+                ),
+            );
+            $ctx = stream_context_create($ops);
+            var_dump($params);
+            var_dump($ctx);
+            $content = file_get_contents('http://localhost:5000/register',false,$ctx);
+            //$fp = fopen('http://localhost:5000/register','r',false,$ctx);
+            //fpassthru($fp);
+            //fclose($fp);
+            //var_dump($content);
 
         }
         $this->load->view('header.php',$data);
