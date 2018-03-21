@@ -16,7 +16,7 @@ def index():
 def register_book():
     values = request.get_json()
 
-    required = ['sender', 'name', 'isbn', 'uuid']
+    required = ['sender', 'name', 'isbn', 'book_material_id']
     if not all(k in values for k in required):
         return 'Missing values', 400
 
@@ -32,7 +32,7 @@ def register_book():
 def request_book():
     values = request.get_json()
 
-    required = ['sender', 'isbn', 'from_date']
+    required = ['sender', 'isbn', 'request_id', 'from_date']
     if not all(k in values for k in required):
         return 'Missing values', 400
 
@@ -48,7 +48,7 @@ def request_book():
 def accept():
     values = request.get_json()
 
-    required = ['sender', 'isbn', 'request_uuid', 'recipient']
+    required = ['sender', 'isbn', 'request_id', 'recipient']
     if not all(k in values for k in required):
         return 'Missing values', 400
 
