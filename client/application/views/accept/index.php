@@ -1,22 +1,13 @@
 <body>
 <div class="container">
-    <table class="table table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>book</th>
-            <th>user</th>
-            <th>from</th>
-            <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">実践AWS Lambda　「サーバレス」を実現する新しいアプリケーションのプラットフォーム</th>
-            <td>yamashita@fringe81.com</td>
-            <td>xxxxxxxxxx</td>
-        </tr>
-
-    </table>
+  <h2>リクエストの一覧</h2>
+  <?php foreach($requests as $request) { ?>
+    <div>
+      <p><?php echo $request->book->isbn; ?></p>
+      <p><?php echo $request->book->name; ?></p>
+    </div>
+    <input type="button" class="btn btn-primary" id="send" value="accept!">
+  <?php } ?>
 </div>
 
 </body>
