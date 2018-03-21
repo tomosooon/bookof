@@ -44,6 +44,13 @@
         "recipient": "fujino@fringe81.com"
       },
       {
+        "kind": "register",
+        "sender": "fujino@fringe81.com",
+        "name": "ジーノ本",
+        "isbn": "9784088700113",
+        "uuid": "jino"
+      },
+      {
         "kind": "review",
         "sender": "fujino@fringe81.com",
         "isbn": "9784088700113",
