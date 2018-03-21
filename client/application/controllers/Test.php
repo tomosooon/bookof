@@ -12,7 +12,7 @@ class Test extends CI_Controller {
     {
         $data['title'] = 'test';
 
-        $this->load->view('header.html',$data);
+        $this->load->view('header.php',$data);
         $this->load->view('test/index',$data);
     }
 

@@ -6,13 +6,13 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->helper('url');
     }
 
     public function index()
 	{
 	    $data['title'] = 'home';
-
-	    $this->load->view('header.html',$data);
+	    $this->load->view('header.php',$data);
 		$this->load->view('home/index',$data);
 	}
 
@@ -20,7 +20,7 @@ class Home extends CI_Controller {
     {
         $data['title'] = 'detail';
         $uuid = $this->input->get_post('uuid');
-        $this->load->view('header.html',$data);
+        $this->load->view('header.php',$data);
         $this->load->view('home/detail',$data);
     }
 }
