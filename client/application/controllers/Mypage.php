@@ -14,6 +14,7 @@ class Mypage extends CI_Controller {
     $email = $this->input->get_post('email');
 
     $this->load->helper('chain_helper');
+    $this->load->helper('amazon_api_helper');
     $models = loadChainData();
 
     $data['title'] = 'mypage';
@@ -24,6 +25,11 @@ class Mypage extends CI_Controller {
     }, $models['users']));
     $user = $models['users'][$userIndex];
 
+    for($i = 0; $i < count($user->bookMaterials); $i++) {
+      $isbn = $user->bookMaterials[$i]->book->isbn;
+      $book = loadBookInformation($isbn);
+      $user->bookMaterials[$i]->book = $book;
+    }
     $data['user'] = $user;
     $this->load->model('User_model');
 	  $this->load->view('header.php', $data);

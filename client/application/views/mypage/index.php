@@ -15,7 +15,7 @@
       <?php foreach($user->bookMaterials as $material) { ?>
         <tr>
           <th>test</th>
-          <th><?php echo $material->book->isbn; ?></th>
+          <th><?php echo $material->book->imageURL; ?></th>
           <th><?php echo $material->bookMaterialId; ?></th>
         </tr>
       <?php } ?>

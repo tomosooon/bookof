@@ -1,4 +1,8 @@
 <?php
+function urlencode_RFC3986($str) {
+    return str_replace('%7E', '~', rawurlencode($str));
+}
+
 function loadBookInformation($isbn) {
 
     define("ACCESS_KEY_ID"     , 'AKIAJ44T2YGZSGJ6APZQ');
@@ -25,10 +29,6 @@ function loadBookInformation($isbn) {
     $canonicalString = $baseParam;
     foreach ($params as $k => $v) {
         $canonicalString .= '&'.urlencode_RFC3986($k).'='.urlencode_RFC3986($v);
-    }
-
-    function urlencode_RFC3986($str) {
-        return str_replace('%7E', '~', rawurlencode($str));
     }
 
     $parsedUrl = parse_url(ACCESS_URL);
