@@ -7,20 +7,18 @@
       <tr>
         <th>Book Name</th>
         <th>isbn</th>
-        <th>user</th>
         <th>uuid</th>
       </tr>
     </thead>
     <tbody>
+      <?php foreach($user->bookMaterials as $material) { ?>
+        <tr>
+          <th>test</th>
+          <th><?php echo $material->book->isbn; ?></th>
+          <th><?php echo $material->uuid; ?></th>
+        </tr>
+      <?php } ?>
     </tbody>
   </table>
-<?php
-foreach($user->reviews as $review) {
-  echo $review->star + " ";
-}
-foreach($user->bookMaterials as $material) {
-  echo $material->isbn;
-}
-?>
 </div>
 </body>
