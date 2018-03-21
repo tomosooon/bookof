@@ -7,6 +7,7 @@ class BookMaterial_model extends CI_Model {
     public $user; #User
     public $isbn; #string
     public $uuid; #string
+    public $books; #[Book]
 
     public function __construct()
     {
