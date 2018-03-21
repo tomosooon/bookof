@@ -237,7 +237,8 @@ switch (ENVIRONMENT)
 
     # ローカル環境
     define('APIPATH', "http://localhost:5000/");
-    define('CHAINPATH', BASEPATH."sample_data/sample_data.chain");
+    // define('CHAINPATH', BASEPATH."sample_data/sample_data.chain");
+    define('CHAINPATH', "/tmp/data.chain");
 
     # 本番環境
     // define('CHAINPATH', "/var2.data.chain");

@@ -7,12 +7,6 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         $this->load->helper('url');
-//        if (!isset($_SESSION['email'])) {
-//            $url = "http://".base_url()."login";
-//            header("Location: {$url}");
-//            exit();
-//        }
-
     }
 
     public function index()
@@ -21,9 +15,6 @@ class Home extends CI_Controller {
       $models = loadChainData();
 
       $data['books'] = $models['books'];
-
-
-
       $data['title'] = 'home';
       $this->load->view('header.php',$data);
       $this->load->view('home/index',$data);

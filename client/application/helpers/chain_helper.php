@@ -4,7 +4,7 @@
 # chainの読み込み処理
 function loadChainData() {
 
-    $file = fopen(BASEPATH."sample_data/sample_data.chain","r"); #相対パスへのアクセス
+    $file = fopen(CHAINPATH,"r"); #相対パスへのアクセス
     // $file = fopen("/tmp/sample_data.chain","r"); #絶対パスへのアクセス
     $arr = [];
     if ($file) {
