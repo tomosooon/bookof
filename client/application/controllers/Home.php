@@ -11,7 +11,7 @@ class Home extends CI_Controller {
 
     public function index()
     {
-      $this->load->helper('Chain_helper');
+      $this->load->helper('chain_helper');
       $models = loadChainData();
 
       $data['books'] = $models['books'];

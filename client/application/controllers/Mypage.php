@@ -13,7 +13,7 @@ class Mypage extends CI_Controller {
   {
     $email = $this->input->get_post('email');
 
-    $this->load->helper('Chain_helper');
+    $this->load->helper('chain_helper');
     $models = loadChainData();
 
     $data['title'] = 'mypage';
