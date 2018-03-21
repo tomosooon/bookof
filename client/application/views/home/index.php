@@ -11,7 +11,7 @@
         </thead>
         <tbody>
         <tr>
-            <th scope="row">実践AWS Lambda　「サーバレス」を実現する新しいアプリケーションのプラットフォーム</th>
+            <th scope="row"><a href = '/home/detail'>実践AWS Lambda　「サーバレス」を実現する新しいアプリケーションのプラットフォーム</a></th>
             <td>xxxx</td>
             <td>yamashita@fringe81.com</td>
             <td>xxxxxxxxxx</td>
