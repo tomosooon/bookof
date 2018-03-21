@@ -60,7 +60,7 @@ function loadChainData() {
                     return $value->isbn;
                 }, $models['books']))){
                     $book = new Book_model();
-                    $book->init($isbn);
+                    $book->init($isbn, $bookName);
                     $models['books'][] = $book;
                 }
 
