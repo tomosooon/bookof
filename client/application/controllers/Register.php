@@ -21,13 +21,11 @@ class Register extends CI_Controller {
             $uuid = uniqid(rand());
 
 
-
             $params = array(
                 "sender" => $sender,
                 "name" => $isbn,
                 "isbn" => $isbn,
                 "uuid" => $uuid
-
             );
             $params = json_encode($params);
 
