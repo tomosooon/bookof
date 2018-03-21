@@ -13,13 +13,10 @@ class Test extends CI_Controller {
         $this->load->helper('Chain_helper');
         $data['title'] = 'test';
 
-        $book = new Book_model();
-        $book->init("isbnだよ！");
-
-        $model = loadChainData();
+        $models = loadChainData();
 
         // $data['book'] = $model['requests'];
-        $data['book'] = $model;
+        $data['models'] = $models;
 
         // $book->isbn = "isbnだよ！";
         $this->load->view('header.php',$data);
